@@ -64,6 +64,8 @@ def test_upload_invalid_format():
             files=files
         )
 
+        assert response.status_code == 500
+
 
 
 def test_upload_large_file():
@@ -87,4 +89,5 @@ def test_upload_large_file():
             headers=headers,
             files=files
         )
+        assert response.status_code == 500 
 

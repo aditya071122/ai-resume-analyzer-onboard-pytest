@@ -28,5 +28,7 @@ Thumbs.db
 # Logs
 *.log
 
+# Markdown notes and documentation
+*.md
 
 resume.pdf

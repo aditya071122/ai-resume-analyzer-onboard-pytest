@@ -27,10 +27,11 @@ def test_signup_missing_email():
         "password": "Password@123"
     }
 
-    APIClient.post(
+    response = APIClient.post(
         SIGNUP_ENDPOINT,
         payload
     )
+    assert response.status_code == 400   
 
 
 def test_signup_invalid_email():
@@ -40,15 +41,17 @@ def test_signup_invalid_email():
         "password": "Password@123"
     }
 
-    APIClient.post(
+    response = APIClient.post(
         SIGNUP_ENDPOINT,
         payload
     )
+    assert response.status_code == 500  
 
 
 def test_signup_empty_payload():
 
-    APIClient.post(
+    response = APIClient.post(
         SIGNUP_ENDPOINT,
         {}
     )
+    assert response.status_code == 400 

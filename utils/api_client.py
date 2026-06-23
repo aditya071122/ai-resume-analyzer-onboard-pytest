@@ -17,13 +17,4 @@ class APIClient:
             files=files
         )
 
-        try:
-            response_body = json.dumps(response.json(), indent=2)
-        except ValueError:
-            response_body = response.text
-
-        print(f"\nPOST {url}")
-        print(f"Status: {response.status_code}")
-        print(f"Response:\n{response_body}")
-
         return response
